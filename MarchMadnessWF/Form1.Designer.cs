@@ -40,7 +40,9 @@
             this.lbl_full_name_value = new System.Windows.Forms.Label();
             this.lbl_full_name = new System.Windows.Forms.Label();
             this.dgv_teams = new System.Windows.Forms.DataGridView();
+            this.pBox_logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_loadApi
@@ -146,15 +148,24 @@
             // dgv_teams
             // 
             this.dgv_teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_teams.Location = new System.Drawing.Point(12, 251);
+            this.dgv_teams.Location = new System.Drawing.Point(12, 147);
             this.dgv_teams.Name = "dgv_teams";
             this.dgv_teams.RowTemplate.Height = 25;
-            this.dgv_teams.Size = new System.Drawing.Size(779, 286);
+            this.dgv_teams.Size = new System.Drawing.Size(779, 502);
             this.dgv_teams.TabIndex = 10;
+            // 
+            // pBox_logo
+            // 
+            this.pBox_logo.Location = new System.Drawing.Point(669, 12);
+            this.pBox_logo.Name = "pBox_logo";
+            this.pBox_logo.Size = new System.Drawing.Size(122, 117);
+            this.pBox_logo.TabIndex = 11;
+            this.pBox_logo.TabStop = false;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(814, 562);
+            this.ClientSize = new System.Drawing.Size(814, 661);
+            this.Controls.Add(this.pBox_logo);
             this.Controls.Add(this.dgv_teams);
             this.Controls.Add(this.lbl_full_name_value);
             this.Controls.Add(this.lbl_full_name);
@@ -168,6 +179,7 @@
             this.Controls.Add(this.btn_load);
             this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +199,6 @@
         private Label lbl_full_name_value;
         private Label lbl_full_name;
         private DataGridView dgv_teams;
+        private PictureBox pBox_logo;
     }
 }

@@ -30,7 +30,7 @@ namespace MarchMadnessWF
                         cbox_teams.Items.Add(team.full_name);
                     }
 
-                    MessageBox.Show("All teams are added");
+                   // MessageBox.Show("All teams are added");
                 }
                 else
                 {
@@ -55,8 +55,16 @@ namespace MarchMadnessWF
                     lbl_city_value.Text = dgv_teams.Rows[i].Cells[2].Value.ToString();
                     lbl_division_value.Text = dgv_teams.Rows[i].Cells[4].Value.ToString();
                     lbl_full_name_value.Text = dgv_teams.Rows[i].Cells[5].Value.ToString();
+
+                    string teamName = dgv_teams.Rows[i].Cells[6].Value.ToString();
+
+                    pBox_logo.Image = Image.FromFile(@"..\..\..\Logos\"+ teamName + ".png");
+                    pBox_logo.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
+
+
+
         }
     }
 }
