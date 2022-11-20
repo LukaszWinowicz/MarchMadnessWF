@@ -26,6 +26,7 @@ namespace MarchMadnessWF
                     foreach (var team in selectedData)
                     {
                         cbox_teams.Items.Add(team.city);
+dgv_teams.
                     }
 
                     MessageBox.Show("All teams are added");
@@ -34,7 +35,6 @@ namespace MarchMadnessWF
                 {
                     MessageBox.Show("Sorry but you have loaded teams in combobox");
                 }
-
                 
             };
         }
@@ -42,6 +42,14 @@ namespace MarchMadnessWF
         private void btn_load_Click(object sender, EventArgs e)
         {
             loadApi();
+        }
+
+        private void cbox_teams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_id_value.Text = cbox_teams.SelectedIndex.ToString();
+            lbl_city_value.Text = cbox_teams.SelectedIndex.ToString();
+            lbl_division_value.Text = cbox_teams.SelectedIndex.ToString();
+            lbl_full_name_value.Text = cbox_teams.SelectedIndex.ToString();
         }
     }
 }
