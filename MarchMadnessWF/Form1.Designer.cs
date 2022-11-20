@@ -28,19 +28,177 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_loadApi = new System.Windows.Forms.Button();
+            this.btn_load = new System.Windows.Forms.Button();
+            this.cbox_teams = new System.Windows.Forms.ComboBox();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.lbl_id_value = new System.Windows.Forms.Label();
+            this.lbl_city_value = new System.Windows.Forms.Label();
+            this.lbl_city = new System.Windows.Forms.Label();
+            this.lbl_division_value = new System.Windows.Forms.Label();
+            this.lbl_division = new System.Windows.Forms.Label();
+            this.lbl_full_name_value = new System.Windows.Forms.Label();
+            this.lbl_full_name = new System.Windows.Forms.Label();
+            this.dgv_teams = new System.Windows.Forms.DataGridView();
+            this.pBox_logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btn_loadApi
+            // 
+            this.btn_loadApi.Location = new System.Drawing.Point(12, 12);
+            this.btn_loadApi.Name = "btn_loadApi";
+            this.btn_loadApi.Size = new System.Drawing.Size(88, 41);
+            this.btn_loadApi.TabIndex = 0;
+            this.btn_loadApi.Text = "Load";
+            this.btn_loadApi.UseVisualStyleBackColor = true;
+            // 
+            // btn_load
+            // 
+            this.btn_load.Location = new System.Drawing.Point(12, 12);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(121, 23);
+            this.btn_load.TabIndex = 0;
+            this.btn_load.Text = "Load teams";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
+            // cbox_teams
+            // 
+            this.cbox_teams.FormattingEnabled = true;
+            this.cbox_teams.Location = new System.Drawing.Point(12, 41);
+            this.cbox_teams.Name = "cbox_teams";
+            this.cbox_teams.Size = new System.Drawing.Size(121, 23);
+            this.cbox_teams.TabIndex = 1;
+            this.cbox_teams.SelectedIndexChanged += new System.EventHandler(this.cbox_teams_SelectedIndexChanged);
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(213, 16);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(17, 15);
+            this.lbl_id.TabIndex = 2;
+            this.lbl_id.Text = "Id";
+            // 
+            // lbl_id_value
+            // 
+            this.lbl_id_value.AutoSize = true;
+            this.lbl_id_value.Location = new System.Drawing.Point(284, 16);
+            this.lbl_id_value.Name = "lbl_id_value";
+            this.lbl_id_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_id_value.TabIndex = 3;
+            this.lbl_id_value.Text = "-";
+            // 
+            // lbl_city_value
+            // 
+            this.lbl_city_value.AutoSize = true;
+            this.lbl_city_value.Location = new System.Drawing.Point(284, 41);
+            this.lbl_city_value.Name = "lbl_city_value";
+            this.lbl_city_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_city_value.TabIndex = 5;
+            this.lbl_city_value.Text = "-";
+            // 
+            // lbl_city
+            // 
+            this.lbl_city.AutoSize = true;
+            this.lbl_city.Location = new System.Drawing.Point(213, 41);
+            this.lbl_city.Name = "lbl_city";
+            this.lbl_city.Size = new System.Drawing.Size(28, 15);
+            this.lbl_city.TabIndex = 4;
+            this.lbl_city.Text = "City";
+            // 
+            // lbl_division_value
+            // 
+            this.lbl_division_value.AutoSize = true;
+            this.lbl_division_value.Location = new System.Drawing.Point(284, 65);
+            this.lbl_division_value.Name = "lbl_division_value";
+            this.lbl_division_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_division_value.TabIndex = 7;
+            this.lbl_division_value.Text = "-";
+            // 
+            // lbl_division
+            // 
+            this.lbl_division.AutoSize = true;
+            this.lbl_division.Location = new System.Drawing.Point(213, 65);
+            this.lbl_division.Name = "lbl_division";
+            this.lbl_division.Size = new System.Drawing.Size(49, 15);
+            this.lbl_division.TabIndex = 6;
+            this.lbl_division.Text = "Division";
+            // 
+            // lbl_full_name_value
+            // 
+            this.lbl_full_name_value.AutoSize = true;
+            this.lbl_full_name_value.Location = new System.Drawing.Point(284, 92);
+            this.lbl_full_name_value.Name = "lbl_full_name_value";
+            this.lbl_full_name_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_full_name_value.TabIndex = 9;
+            this.lbl_full_name_value.Text = "-";
+            // 
+            // lbl_full_name
+            // 
+            this.lbl_full_name.AutoSize = true;
+            this.lbl_full_name.Location = new System.Drawing.Point(213, 92);
+            this.lbl_full_name.Name = "lbl_full_name";
+            this.lbl_full_name.Size = new System.Drawing.Size(59, 15);
+            this.lbl_full_name.TabIndex = 8;
+            this.lbl_full_name.Text = "Full name";
+            // 
+            // dgv_teams
+            // 
+            this.dgv_teams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_teams.Location = new System.Drawing.Point(12, 147);
+            this.dgv_teams.Name = "dgv_teams";
+            this.dgv_teams.RowTemplate.Height = 25;
+            this.dgv_teams.Size = new System.Drawing.Size(779, 502);
+            this.dgv_teams.TabIndex = 10;
+            // 
+            // pBox_logo
+            // 
+            this.pBox_logo.Location = new System.Drawing.Point(669, 12);
+            this.pBox_logo.Name = "pBox_logo";
+            this.pBox_logo.Size = new System.Drawing.Size(122, 117);
+            this.pBox_logo.TabIndex = 11;
+            this.pBox_logo.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 548);
+            this.ClientSize = new System.Drawing.Size(814, 661);
+            this.Controls.Add(this.pBox_logo);
+            this.Controls.Add(this.dgv_teams);
+            this.Controls.Add(this.lbl_full_name_value);
+            this.Controls.Add(this.lbl_full_name);
+            this.Controls.Add(this.lbl_division_value);
+            this.Controls.Add(this.lbl_division);
+            this.Controls.Add(this.lbl_city_value);
+            this.Controls.Add(this.lbl_city);
+            this.Controls.Add(this.lbl_id_value);
+            this.Controls.Add(this.lbl_id);
+            this.Controls.Add(this.cbox_teams);
+            this.Controls.Add(this.btn_load);
             this.Name = "Form1";
-            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private Button btn_loadApi;
+        private Button btn_load;
+        private ComboBox cbox_teams;
+        private Label lbl_id;
+        private Label lbl_id_value;
+        private Label lbl_city_value;
+        private Label lbl_city;
+        private Label lbl_division_value;
+        private Label lbl_division;
+        private Label lbl_full_name_value;
+        private Label lbl_full_name;
+        private DataGridView dgv_teams;
+        private PictureBox pBox_logo;
     }
 }
