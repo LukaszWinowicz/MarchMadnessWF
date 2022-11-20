@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btn_loadApi = new System.Windows.Forms.Button();
+            this.btn_load = new System.Windows.Forms.Button();
+            this.cbox_teams = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_loadApi
@@ -39,16 +41,31 @@
             this.btn_loadApi.TabIndex = 0;
             this.btn_loadApi.Text = "Load";
             this.btn_loadApi.UseVisualStyleBackColor = true;
-            this.btn_loadApi.Click += new System.EventHandler(this.btn_loadApi_Click);
+            // 
+            // btn_load
+            // 
+            this.btn_load.Location = new System.Drawing.Point(12, 12);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(121, 23);
+            this.btn_load.TabIndex = 0;
+            this.btn_load.Text = "Load teams";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
+            // cbox_teams
+            // 
+            this.cbox_teams.FormattingEnabled = true;
+            this.cbox_teams.Location = new System.Drawing.Point(12, 41);
+            this.cbox_teams.Name = "cbox_teams";
+            this.cbox_teams.Size = new System.Drawing.Size(121, 23);
+            this.cbox_teams.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 548);
-            this.Controls.Add(this.btn_loadApi);
+            this.ClientSize = new System.Drawing.Size(1112, 562);
+            this.Controls.Add(this.cbox_teams);
+            this.Controls.Add(this.btn_load);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -56,5 +73,7 @@
         #endregion
 
         private Button btn_loadApi;
+        private Button btn_load;
+        private ComboBox cbox_teams;
     }
 }
