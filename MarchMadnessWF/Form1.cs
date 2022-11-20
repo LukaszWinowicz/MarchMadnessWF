@@ -20,13 +20,14 @@ namespace MarchMadnessWF
                 var db = JsonConvert.DeserializeObject<Root>(json);
 
                 var selectedData = db.data;
+                dgv_teams.DataSource = db.data;
+                dgv_teams.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
                 if (cbox_teams.Items.Count == 0)
                 {
                     foreach (var team in selectedData)
                     {
-                        cbox_teams.Items.Add(team.city);
-dgv_teams.
+                        cbox_teams.Items.Add(team.full_name);
                     }
 
                     MessageBox.Show("All teams are added");
@@ -46,10 +47,16 @@ dgv_teams.
 
         private void cbox_teams_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_id_value.Text = cbox_teams.SelectedIndex.ToString();
-            lbl_city_value.Text = cbox_teams.SelectedIndex.ToString();
-            lbl_division_value.Text = cbox_teams.SelectedIndex.ToString();
-            lbl_full_name_value.Text = cbox_teams.SelectedIndex.ToString();
+            for (int i = 0; i < dgv_teams.Rows.Count; i++)
+            {
+                if (cbox_teams.Text == dgv_teams.Rows[i].Cells[5].Value.ToString())
+                {
+                    lbl_id_value.Text = dgv_teams.Rows[i].Cells[0].Value.ToString();
+                    lbl_city_value.Text = dgv_teams.Rows[i].Cells[2].Value.ToString();
+                    lbl_division_value.Text = dgv_teams.Rows[i].Cells[4].Value.ToString();
+                    lbl_full_name_value.Text = dgv_teams.Rows[i].Cells[5].Value.ToString();
+                }
+            }
         }
     }
 }
