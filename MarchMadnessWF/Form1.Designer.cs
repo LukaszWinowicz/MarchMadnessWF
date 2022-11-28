@@ -41,8 +41,11 @@
             this.lbl_full_name = new System.Windows.Forms.Label();
             this.dgv_teams = new System.Windows.Forms.DataGridView();
             this.pBox_logo = new System.Windows.Forms.PictureBox();
+            this.dgv_players = new System.Windows.Forms.DataGridView();
+            this.btn_load_all_players = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_players)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_loadApi
@@ -151,7 +154,7 @@
             this.dgv_teams.Location = new System.Drawing.Point(12, 147);
             this.dgv_teams.Name = "dgv_teams";
             this.dgv_teams.RowTemplate.Height = 25;
-            this.dgv_teams.Size = new System.Drawing.Size(779, 502);
+            this.dgv_teams.Size = new System.Drawing.Size(779, 215);
             this.dgv_teams.TabIndex = 10;
             // 
             // pBox_logo
@@ -162,9 +165,30 @@
             this.pBox_logo.TabIndex = 11;
             this.pBox_logo.TabStop = false;
             // 
+            // dgv_players
+            // 
+            this.dgv_players.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_players.Location = new System.Drawing.Point(12, 390);
+            this.dgv_players.Name = "dgv_players";
+            this.dgv_players.RowTemplate.Height = 25;
+            this.dgv_players.Size = new System.Drawing.Size(779, 252);
+            this.dgv_players.TabIndex = 12;
+            // 
+            // btn_load_all_players
+            // 
+            this.btn_load_all_players.Location = new System.Drawing.Point(12, 70);
+            this.btn_load_all_players.Name = "btn_load_all_players";
+            this.btn_load_all_players.Size = new System.Drawing.Size(121, 23);
+            this.btn_load_all_players.TabIndex = 13;
+            this.btn_load_all_players.Text = "Load players";
+            this.btn_load_all_players.UseVisualStyleBackColor = true;
+            this.btn_load_all_players.Click += new System.EventHandler(this.btn_load_all_players_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(814, 661);
+            this.ClientSize = new System.Drawing.Size(814, 690);
+            this.Controls.Add(this.btn_load_all_players);
+            this.Controls.Add(this.dgv_players);
             this.Controls.Add(this.pBox_logo);
             this.Controls.Add(this.dgv_teams);
             this.Controls.Add(this.lbl_full_name_value);
@@ -180,6 +204,7 @@
             this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_players)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +225,7 @@
         private Label lbl_full_name;
         private DataGridView dgv_teams;
         private PictureBox pBox_logo;
+        private DataGridView dgv_players;
+        private Button btn_load_all_players;
     }
 }
