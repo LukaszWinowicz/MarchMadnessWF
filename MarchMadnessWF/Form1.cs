@@ -66,5 +66,29 @@ namespace MarchMadnessWF
 
 
         }
+
+
+        public async Task loadPlayers()
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var result = await httpClient.GetAsync("https://www.balldontlie.io/api/v1/players");
+                var json = await result.Content.ReadAsStringAsync();
+
+                var db = JsonConvert.DeserializeObject<Root>(json);
+
+                var selectedData = db.data;
+                dgv_players.DataSource = db.data;
+                dgv_players.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                
+
+            };
+        }
+
+
+        private void btn_load_all_players_Click(object sender, EventArgs e)
+        {
+            loadPlayers();
+        }
     }
 }

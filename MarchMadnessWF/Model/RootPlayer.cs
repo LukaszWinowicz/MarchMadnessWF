@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MarchMadnessWF.Model
 {
-    public class Root
+    public class RootPlayer
     {
-        public List<Team> data { get; set; }
+        public List<Player> data { get; set; }
         public Meta meta { get; set; }
     }
 }
