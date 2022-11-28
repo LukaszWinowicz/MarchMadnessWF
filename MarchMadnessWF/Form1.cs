@@ -17,7 +17,7 @@ namespace MarchMadnessWF
                 var result = await httpClient.GetAsync("https://www.balldontlie.io/api/v1/teams");
                 var json = await result.Content.ReadAsStringAsync();
 
-                var db = JsonConvert.DeserializeObject<Root>(json);
+                var db = JsonConvert.DeserializeObject<RootTeam>(json);
 
                 var selectedData = db.data;
                 dgv_teams.DataSource = db.data;
@@ -72,10 +72,11 @@ namespace MarchMadnessWF
         {
             using (var httpClient = new HttpClient())
             {
-                var result = await httpClient.GetAsync("https://www.balldontlie.io/api/v1/players");
+                var result = await httpClient.GetAsync("https://www.balldontlie.io/api/v1/players?per_page=100&page=2");
+                
                 var json = await result.Content.ReadAsStringAsync();
 
-                var db = JsonConvert.DeserializeObject<Root>(json);
+                var db = JsonConvert.DeserializeObject<RootPlayer>(json);
 
                 var selectedData = db.data;
                 dgv_players.DataSource = db.data;
