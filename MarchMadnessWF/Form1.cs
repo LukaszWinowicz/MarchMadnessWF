@@ -84,18 +84,21 @@ namespace MarchMadnessWF
 
                 // when you want to add all players
 
-                
-                for (int i = 1; i < 3; i++)
+                var dt = new List<Player>();
+                for (int i = 1; i < 10; i++)
                 {
                     var resultMulti = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
-                    var jsonMulti = await result.Content.ReadAsStringAsync();
-                    var dbMulti = JsonConvert.DeserializeObject<RootPlayer>(json);
+                    var jsonMulti = await resultMulti.Content.ReadAsStringAsync();
+                    var dbMulti = JsonConvert.DeserializeObject<RootPlayer>(jsonMulti);
 
+                    //dt = dbMulti.data;
+                    dt.AddRange(dbMulti.data);
                     
+
 
                 }
 
-
+                dgv_players.DataSource = dt;
 
             };
         }
