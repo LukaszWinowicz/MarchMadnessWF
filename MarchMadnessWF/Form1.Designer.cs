@@ -43,6 +43,15 @@
             this.pBox_logo = new System.Windows.Forms.PictureBox();
             this.dgv_players = new System.Windows.Forms.DataGridView();
             this.btn_load_all_players = new System.Windows.Forms.Button();
+            this.cbox_players = new System.Windows.Forms.ComboBox();
+            this.lbl_last_name_value = new System.Windows.Forms.Label();
+            this.lbl_last_name = new System.Windows.Forms.Label();
+            this.lbl_first_name_value = new System.Windows.Forms.Label();
+            this.lbl_first_name = new System.Windows.Forms.Label();
+            this.lbl_id_player_value = new System.Windows.Forms.Label();
+            this.lbl_id_player = new System.Windows.Forms.Label();
+            this.lbl_team_player_value = new System.Windows.Forms.Label();
+            this.lbl_team_player = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_players)).BeginInit();
@@ -184,9 +193,99 @@
             this.btn_load_all_players.UseVisualStyleBackColor = true;
             this.btn_load_all_players.Click += new System.EventHandler(this.btn_load_all_players_Click);
             // 
+            // cbox_players
+            // 
+            this.cbox_players.FormattingEnabled = true;
+            this.cbox_players.Location = new System.Drawing.Point(812, 147);
+            this.cbox_players.Name = "cbox_players";
+            this.cbox_players.Size = new System.Drawing.Size(121, 23);
+            this.cbox_players.TabIndex = 14;
+            this.cbox_players.SelectedIndexChanged += new System.EventHandler(this.cbox_players_SelectedIndexChanged);
+            // 
+            // lbl_last_name_value
+            // 
+            this.lbl_last_name_value.AutoSize = true;
+            this.lbl_last_name_value.Location = new System.Drawing.Point(883, 237);
+            this.lbl_last_name_value.Name = "lbl_last_name_value";
+            this.lbl_last_name_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_last_name_value.TabIndex = 20;
+            this.lbl_last_name_value.Text = "-";
+            // 
+            // lbl_last_name
+            // 
+            this.lbl_last_name.AutoSize = true;
+            this.lbl_last_name.Location = new System.Drawing.Point(812, 237);
+            this.lbl_last_name.Name = "lbl_last_name";
+            this.lbl_last_name.Size = new System.Drawing.Size(61, 15);
+            this.lbl_last_name.TabIndex = 19;
+            this.lbl_last_name.Text = "Last name";
+            // 
+            // lbl_first_name_value
+            // 
+            this.lbl_first_name_value.AutoSize = true;
+            this.lbl_first_name_value.Location = new System.Drawing.Point(883, 213);
+            this.lbl_first_name_value.Name = "lbl_first_name_value";
+            this.lbl_first_name_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_first_name_value.TabIndex = 18;
+            this.lbl_first_name_value.Text = "-";
+            // 
+            // lbl_first_name
+            // 
+            this.lbl_first_name.AutoSize = true;
+            this.lbl_first_name.Location = new System.Drawing.Point(812, 213);
+            this.lbl_first_name.Name = "lbl_first_name";
+            this.lbl_first_name.Size = new System.Drawing.Size(62, 15);
+            this.lbl_first_name.TabIndex = 17;
+            this.lbl_first_name.Text = "First name";
+            // 
+            // lbl_id_player_value
+            // 
+            this.lbl_id_player_value.AutoSize = true;
+            this.lbl_id_player_value.Location = new System.Drawing.Point(883, 188);
+            this.lbl_id_player_value.Name = "lbl_id_player_value";
+            this.lbl_id_player_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_id_player_value.TabIndex = 16;
+            this.lbl_id_player_value.Text = "-";
+            // 
+            // lbl_id_player
+            // 
+            this.lbl_id_player.AutoSize = true;
+            this.lbl_id_player.Location = new System.Drawing.Point(812, 188);
+            this.lbl_id_player.Name = "lbl_id_player";
+            this.lbl_id_player.Size = new System.Drawing.Size(17, 15);
+            this.lbl_id_player.TabIndex = 15;
+            this.lbl_id_player.Text = "Id";
+            // 
+            // lbl_team_player_value
+            // 
+            this.lbl_team_player_value.AutoSize = true;
+            this.lbl_team_player_value.Location = new System.Drawing.Point(884, 265);
+            this.lbl_team_player_value.Name = "lbl_team_player_value";
+            this.lbl_team_player_value.Size = new System.Drawing.Size(12, 15);
+            this.lbl_team_player_value.TabIndex = 22;
+            this.lbl_team_player_value.Text = "-";
+            // 
+            // lbl_team_player
+            // 
+            this.lbl_team_player.AutoSize = true;
+            this.lbl_team_player.Location = new System.Drawing.Point(813, 265);
+            this.lbl_team_player.Name = "lbl_team_player";
+            this.lbl_team_player.Size = new System.Drawing.Size(35, 15);
+            this.lbl_team_player.TabIndex = 21;
+            this.lbl_team_player.Text = "Team";
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(814, 690);
+            this.ClientSize = new System.Drawing.Size(1113, 690);
+            this.Controls.Add(this.lbl_team_player_value);
+            this.Controls.Add(this.lbl_team_player);
+            this.Controls.Add(this.lbl_last_name_value);
+            this.Controls.Add(this.lbl_last_name);
+            this.Controls.Add(this.lbl_first_name_value);
+            this.Controls.Add(this.lbl_first_name);
+            this.Controls.Add(this.lbl_id_player_value);
+            this.Controls.Add(this.lbl_id_player);
+            this.Controls.Add(this.cbox_players);
             this.Controls.Add(this.btn_load_all_players);
             this.Controls.Add(this.dgv_players);
             this.Controls.Add(this.pBox_logo);
@@ -227,5 +326,14 @@
         private PictureBox pBox_logo;
         private DataGridView dgv_players;
         private Button btn_load_all_players;
+        private ComboBox cbox_players;
+        private Label lbl_last_name_value;
+        private Label lbl_last_name;
+        private Label lbl_first_name_value;
+        private Label lbl_first_name;
+        private Label lbl_id_player_value;
+        private Label lbl_id_player;
+        private Label lbl_team_player_value;
+        private Label lbl_team_player;
     }
 }
