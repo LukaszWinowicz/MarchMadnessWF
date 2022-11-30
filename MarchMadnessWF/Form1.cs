@@ -76,15 +76,19 @@ namespace MarchMadnessWF
 
                 // when you want to add only 100 players
 
-                var result = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page=2");
+             /*   var result = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page=2");
                 var json = await result.Content.ReadAsStringAsync();
                 var db = JsonConvert.DeserializeObject<RootPlayer>(json);
                 dgv_players.DataSource = db.data;
-                dgv_players.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                dgv_players.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;*/
 
                 // when you want to add all players
 
                 var dt = new List<Player>();
+
+                //var numerOfSheets;
+
+
                 for (int i = 1; i < 10; i++)
                 {
                     var resultMulti = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
@@ -96,10 +100,11 @@ namespace MarchMadnessWF
                     
 
 
+
                 }
 
-                dgv_players.DataSource = dt;
-
+                var sortedDt = dt.OrderBy(x => x.id).ToList();
+                dgv_players.DataSource = sortedDt;
             };
         }
 
