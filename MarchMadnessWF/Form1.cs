@@ -74,22 +74,15 @@ namespace MarchMadnessWF
             using (var httpClient = new HttpClient())
             {
 
-                // when you want to add only 100 players
+                // check number of pages (need to below loop)
 
-             /*   var result = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page=2");
+                var result = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100");
                 var json = await result.Content.ReadAsStringAsync();
                 var db = JsonConvert.DeserializeObject<RootPlayer>(json);
-                dgv_players.DataSource = db.data;
-                dgv_players.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;*/
-
-                // when you want to add all players
+                var pages = db.meta.total_pages;
 
                 var dt = new List<Player>();
-
-                //var numerOfSheets;
-
-
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < pages; i++)
                 {
                     var resultMulti = await httpClient.GetAsync($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
                     var jsonMulti = await resultMulti.Content.ReadAsStringAsync();
@@ -98,9 +91,6 @@ namespace MarchMadnessWF
                     //dt = dbMulti.data;
                     dt.AddRange(dbMulti.data);
                     
-
-
-
                 }
 
                 var sortedDt = dt.OrderBy(x => x.id).ToList();
