@@ -29,8 +29,6 @@ namespace MarchMadnessWF
                     {
                         cbox_teams.Items.Add(team.full_name);
                     }
-
-                   // MessageBox.Show("All teams are added");
                 }
                 else
                 {
@@ -88,13 +86,30 @@ namespace MarchMadnessWF
                     var jsonMulti = await resultMulti.Content.ReadAsStringAsync();
                     var dbMulti = JsonConvert.DeserializeObject<RootPlayer>(jsonMulti);
 
-                    //dt = dbMulti.data;
                     dt.AddRange(dbMulti.data);
                     
                 }
 
                 var sortedDt = dt.OrderBy(x => x.id).ToList();
                 dgv_players.DataSource = sortedDt;
+
+                var selectedData = sortedDt;
+                dgv_teams.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+
+
+                if (cbox_players.Items.Count == 0)
+                {
+                    foreach (var player in selectedData)
+                    {
+                        cbox_players.Items.Add($"{player.id}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sorry but you have loaded teams in combobox");
+                }
+
             };
         }
 
@@ -102,6 +117,22 @@ namespace MarchMadnessWF
         private void btn_load_all_players_Click(object sender, EventArgs e)
         {
             loadPlayers();
+        }
+
+        private void cbox_players_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgv_players.Rows.Count; i++)
+            {
+                if (cbox_players.Text == dgv_players.Rows[i].Cells[0].Value.ToString())
+                {
+                    lbl_id_player_value.Text = dgv_players.Rows[i].Cells[0].Value.ToString();
+                    lbl_first_name_value.Text = dgv_players.Rows[i].Cells[1].Value.ToString();
+                    lbl_last_name_value.Text = dgv_players.Rows[i].Cells[4].Value.ToString();
+                    var team = dgv_players.Rows[i].Cells[6].Value.ToString();
+                    lbl_team_player_value.Text = team;
+                   
+                }
+            }
         }
     }
 }
